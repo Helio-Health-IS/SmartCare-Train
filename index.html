@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Streamline SmartCare – Training Environment | Helio Health</title>
+
+  <style>
+    :root{
+      /* Helio Health Brand Colors */
+      --hh-orange:#ff6c0c;
+      --hh-gray:#939598;
+      --hh-warmgray:#cdc3bb;
+      --hh-teal:#00bcb4;
+      --hh-yellow:#ffdd00;
+      --hh-amber:#ffa400;
+
+      --ink:#1b1b1f;
+      --ink-soft:#3a3a45;
+      --bg:#faf9f7;
+      --card:#ffffff;
+
+      --radius:14px;
+      --shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:"Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.45;
+    }
+
+    /* ---------- HEADER ---------- */
+    header{
+      background:linear-gradient(135deg,var(--hh-orange),var(--hh-amber));
+      padding:24px 18px 28px;
+      color:#fff;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+
+    .logo{
+      background:#fff;
+      border-radius:14px;
+      padding:10px 14px;
+      box-shadow:0 6px 14px rgba(0,0,0,.12);
+    }
+
+    .logo img{
+      height:48px;
+      width:auto;
+      display:block;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:1.5rem;
+      font-weight:800;
+    }
+
+    .brand p{
+      margin:.35rem 0 0;
+      max-width:70ch;
+      opacity:.95;
+    }
+
+    /* ---------- WARNING ---------- */
+    .alert{
+      margin-top:18px;
+      background:rgba(255,255,255,.95);
+      border-left:8px solid var(--hh-yellow);
+      border-radius:var(--radius);
+      padding:14px 16px;
+      color:var(--ink);
+      box-shadow:var(--shadow);
+    }
+
+    .alert strong{
+      display:block;
+      font-size:1.05rem;
+      margin-bottom:6px;
+    }
+
+    .alert ul{
+      margin:0;
+      padding-left:18px;
+    }
+
+    .alert li{
+      margin:4px 0;
+    }
+
+    /* ---------- MAIN ---------- */
+    main{
+      padding:26px 18px 42px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:18px;
+      margin-top:18px;
+    }
+
+    .card{
+      grid-column:span 12;
+      background:var(--card);
+      border:1px solid var(--hh-warmgray);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+
+    @media(min-width:900px){
+      .half{grid-column:span 6}
+      .third{grid-column:span 4}
+    }
+
+    .pill{
+      display:inline-block;
+      background:rgba(0,188,180,.12);
+      color:var(--hh-teal);
+      border:1px solid rgba(0,188,180,.35);
+      border-radius:999px;
+      padding:5px 12px;
+      font-weight:700;
+      font-size:.85rem;
+      margin-bottom:10px;
+    }
+
+    h2{
+      margin:0 0 8px;
+      font-size:1.15rem;
+    }
+
+    p{
+      margin:0 0 12px;
+      color:var(--ink-soft);
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 16px;
+      border-radius:12px;
+      font-weight:800;
+      text-decoration:none;
+      min-height:44px;
+      transition:transform .08s ease;
+    }
+
+    .btn-primary{
+      background:var(--hh-orange);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-outline{
+      background:#fff;
+      color:var(--hh-teal);
+      border:2px solid var(--hh-teal);
+    }
+
+    .btn-outline:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-link{
+      color:var(--hh-teal);
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    /* ---------- NOTES ---------- */
+    .note{
+      background:rgba(255,221,0,.25);
+      border-left:8px solid var(--hh-amber);
+      border-radius:var(--radius);
+      padding:12px 14px;
+      color:#4a3a13;
+      font-size:.95rem;
+    }
+
+    .small{
+      font-size:.9rem;
+      color:var(--hh-gray);
+    }
+
+    footer{
+      margin-top:26px;
+      padding-top:14px;
+      border-top:1px solid var(--hh-warmgray);
+      font-size:.9rem;
+      color:var(--hh-gray);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">
+        <!-- Update the src path if stored elsewhere (e.g., Site Assets) -->
+        <img src="Helio_wTAG_4c_RGB.png" alt="Helio Health logo" />
+      </div>
+      <div>
+        <h1>Streamline SmartCare — Training Environment</h1>
+        <p>
+          You are entering Helio Health’s SmartCare <strong>TRAINING</strong> site.
+          This environment is for learning and practice only.
+        </p>
+      </div>
+    </div>
+
+    <div class="alert" role="alert">
+      <strong>⚠️ IMPORTANT: Training Environment — Do NOT document on real patients.</strong>
+      <ul>
+        <li><strong>Never</strong> enter, edit, or search real patient information here.</li>
+        <li>Use <strong>test/training clients only</strong> and follow your program’s training guidance.</li>
+        <li>If you intended to use the live (production) system, select <em>Go to Live Environment</em> below.</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="grid">
+
+      <!-- QUICK LINKS -->
+      <section class="card half">
+        <div class="pill">Quick Links</div>
+        <h2>Not here by accident?</h2>
+        <p>
+          If you meant to access the real SmartCare system (production/live),
+          use the button below.
+        </p>
+
+        <div class="actions">
+          <!-- Replace with production URL when known -->
+          <a href="https://REPLACE-WITH-LIVE-SMARTCARE-URL"
+             class="btn btn-primary">
+            Go to Live Environment (Production)
+          </a>
+
+          <a href="#resources" class="btn-link">
+            View Training Resources
+          </a>
+        </div>
+
+        <p class="small" style="margin-top:10px;">
+          Tip: Keep the placeholder and update it once the production URL is confirmed.
+        </p>
+      </section>
+
+      <!-- ACADEMY -->
+      <section class="card half">
+        <div class="pill">Helio Health Academy</div>
+        <h2>Learn with WalkMe TeachMe</h2>
+        <p>
+          Access <strong>Helio Health Academy (WalkMe TeachMe)</strong> for short lessons
+          and guided practice designed to help staff learn SmartCare workflows
+          in the training environment.
+        </p>
+
+        <div class="note">
+          <strong>How to use it:</strong><br />
+          Look for Helio Health Academy / WalkMe guidance inside SmartCare
+          while you practice. Courses are role-based and hands-on.
+        </div>
+      </section>
+
+      <!-- RESOURCES -->
+      <section class="card" id="resources">
+        <div class="pill">Training Resources</div>
+        <h2>Start here</h2>
+        <p>
+          Use these Helio Health resources to get oriented and follow the
+          standard SmartCare training workflow.
+        </p>
+
+        <div class="actions">
+          <a
+            class="btn btn-outline"
+            href="https://heliohealth.sharepoint.com/:b:/r/sites/HelioHea/HowTos/HH-IS-HWT-0019%20-%20SmartCare%20Training%20Manual.pdf?csf=1&web=1&e=vCY2om">
+            Open User Guide (PDF)
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="https://heliohealth.sharepoint.com/:v:/r/sites/HelioHea/HowTos/HH-IS-HWT-0018%20-%20Welcome%20to%20HH%20SmartCare.mp4?csf=1&web=1&e=WEcgkr">
+            Watch Intro Video
+          </a>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          The intro video is hosted in Helio Health’s internal SharePoint library
+          and is available to all users.
+        </p>
+      </section>
+
+      <!-- REMINDERS -->
+      <section class="card third">
+        <div class="pill">Reminder</div>
+        <h2>Training data only</h2>
+        <p>
+          Use only test/training clients and test information.
+          Do not copy or paste content from production charts into training.
+        </p>
+      </section>
+
+      <section class="card third">
+        <div class="pill">Best Practice</div>
+        <h2>Practice safely</h2>
+        <p>
+          If you are unsure whether you are in training or live,
+          stop and use the <strong>Go to Live Environment</strong> button
+          or contact the Help Desk.
+        </p>
+      </section>
+
+      <section class="card third">
+        <div class="pill">Versioning</div>
+        <h2>Stay current</h2>
+        <p>
+          Always use the most current SmartCare training materials
+          available in the HowTos library.
+        </p>
+      </section>
+
+    </div>
+
+    <footer>
+      <strong>Helio Health</strong> • SmartCare Training Environment<br />
+      If you reached this page unexpectedly, update your bookmarks or favorites.
+    </footer>
+  </div>
+</main>
+
+</body>
+</html>
